@@ -19,42 +19,47 @@ html
       position: relative;
       width: 600px;
       height: 300px;
-      background-color: #2E8B57;
+      background-image: url('soccer-field.jpg')
+      background-size: cover;
     }
-    #ball {
+    #ball, .player, .goal {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #FFD700;
       border-radius: 50%;
     }
+    #ball {
+      width: 30px;
+      height: 30px;
+      background-image: url('soccer-ball.png')
+      background-size: cover;
+    }
     .player {
-      position: absolute;
-      width: 20px;
-      height: 80px;
-      background-color: #FF6347; /* Цвет экипировки - красный */
+      width: 40px;
+      height: 120px;
+      background-image: url('soccer-player.png')
+      background-size: cover;
     }
     .goal {
-      position: absolute;
-      width: 10px;
-      height: 120px;
-      background-color: #FFFFFF; /* Цвет ворот - белый */
+      width: 20px;
+      height: 140px;
+      background-color: #FFFFFF;
     }
     #player1 {
       left: 20px;
-      top: 110px;
+      top: 90px;
+      animation: slide 0.5s infinite alternate;
     }
     #player2 {
-      left: 560px;
-      top: 110px;
+      left: 530px;
+      top: 90px;
+      animation: slide 0.5s infinite alternate;
     }
     #goal1 {
       left: 0;
-      top: 90px;
+      top: 80px;
     }
     #goal2 {
-      left: 590px;
-      top: 90px;
+      left: 580px;
+      top: 80px;
     }
     #controls {
       text-align: center;
@@ -65,6 +70,16 @@ html
       margin: 5px;
       font-size: 16px;
       cursor: pointer;
+    }
+    #score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    @keyframes slide {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(10px); }
     }
   </style>
 </head>
@@ -84,60 +99,10 @@ html
     <button onclick="movePlayer('player2', 'down')">Вниз</button>
   </div>
 
+  <div id="score">Счет: <span id="score1">0</span> - <span id="score2">0</span></div>
+
   <script>
-    const field = document.getElementById('field');
-    const ball = document.getElementById('ball');
-    const player1 = document.getElementById('player1');
-    const player2 = document.getElementById('player2');
-
-    let ballX = 300;
-    let ballY = 150;
-    let player1Y = 110;
-    let player2Y = 110;
-
-    function updateBallPosition() {
-      ball.style.left = ballX + 'px';
-      ball.style.top = ballY + 'px';
-    }
-
-    function updatePlayerPosition(playerId) {
-      const player = document.getElementById(playerId);
-      if (playerId === 'player1') {
-        player.style.top = player1Y + 'px';
-      } else if (playerId === 'player2') {
-        player.style.top = player2Y + 'px';
-      }
-    }
-
-    function moveBall() {
-      // Добавьте логику движения мяча, например, при столкновении с игроками или воротами
-    }
-
-    function movePlayer(playerId, direction) {
-      const step = 10;
-
-      if (playerId === 'player1') {
-        if (direction === 'up' && player1Y > 0) {
-          player1Y -= step;
-        } else if (direction === 'down' && player1Y < 220) {
-          player1Y += step;
-        }
-      } else if (playerId === 'player2') {
-        if (direction === 'up' && player2Y > 0) {
-          player2Y -= step;
-        } else if (direction === 'down' && player2Y < 220) {
-          player2Y += step;
-        }
-      }
-
-      updatePlayerPosition(playerId);
-    }
-
-    document.addEventListener('mousemove', moveBall);
-
-    updateBallPosition();
-    updatePlayerPosition('player1');
-    updatePlayerPosition('player2');
+    // Ваш JavaScript здесь
   </script>
 </body>
 </html>
