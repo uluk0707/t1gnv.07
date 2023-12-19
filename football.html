@@ -1,4 +1,4 @@
-```html
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +28,34 @@
       background-color: #FFD700;
       border-radius: 50%;
     }
+    .player {
+      position: absolute;
+      width: 20px;
+      height: 80px;
+      background-color: #FF6347; /* Цвет экипировки - красный */
+    }
+    .goal {
+      position: absolute;
+      width: 10px;
+      height: 120px;
+      background-color: #FFFFFF; /* Цвет ворот - белый */
+    }
+    #player1 {
+      left: 20px;
+      top: 110px;
+    }
+    #player2 {
+      left: 560px;
+      top: 110px;
+    }
+    #goal1 {
+      left: 0;
+      top: 90px;
+    }
+    #goal2 {
+      left: 590px;
+      top: 90px;
+    }
     #controls {
       text-align: center;
       margin-top: 20px;
@@ -43,52 +71,73 @@
 <body>
   <div id="field">
     <div id="ball"></div>
+    <div id="player1" class="player"></div>
+    <div id="player2" class="player"></div>
+    <div id="goal1" class="goal"></div>
+    <div id="goal2" class="goal"></div>
   </div>
 
   <div id="controls">
-    <button onclick="moveBall('up')">Вверх</button>
-    <button onclick="moveBall('down')">Вниз</button>
-    <button onclick="moveBall('left')">Влево</button>
-    <button onclick="moveBall('right')">Вправо</button>
+    <button onclick="movePlayer('player1', 'up')">Вверх</button>
+    <button onclick="movePlayer('player1', 'down')">Вниз</button>
+    <button onclick="movePlayer('player2', 'up')">Вверх</button>
+    <button onclick="movePlayer('player2', 'down')">Вниз</button>
   </div>
 
   <script>
     const field = document.getElementById('field');
     const ball = document.getElementById('ball');
+    const player1 = document.getElementById('player1');
+    const player2 = document.getElementById('player2');
 
     let ballX = 300;
     let ballY = 150;
+    let player1Y = 110;
+    let player2Y = 110;
 
     function updateBallPosition() {
       ball.style.left = ballX + 'px';
       ball.style.top = ballY + 'px';
     }
 
-    function moveBall(direction) {
+    function updatePlayerPosition(playerId) {
+      const player = document.getElementById(playerId);
+      if (playerId === 'player1') {
+        player.style.top = player1Y + 'px';
+      } else if (playerId === 'player2') {
+        player.style.top = player2Y + 'px';
+      }
+    }
+
+    function moveBall() {
+      // Добавьте логику движения мяча, например, при столкновении с игроками или воротами
+    }
+
+    function movePlayer(playerId, direction) {
       const step = 10;
 
-      switch (direction) {
-        case 'up':
-          ballY -= step;
-          break;
-        case 'down':
-          ballY += step;
-          break;
-        case 'left':
-          ballX -= step;
-          break;
-        case 'right':
-          ballX += step;
-          break;
+      if (playerId === 'player1') {
+        if (direction === 'up' && player1Y > 0) {
+          player1Y -= step;
+        } else if (direction === 'down' && player1Y < 220) {
+          player1Y += step;
+        }
+      } else if (playerId === 'player2') {
+        if (direction === 'up' && player2Y > 0) {
+          player2Y -= step;
+        } else if (direction === 'down' && player2Y < 220) {
+          player2Y += step;
+        }
       }
 
-      updateBallPosition();
+      updatePlayerPosition(playerId);
     }
 
     document.addEventListener('mousemove', moveBall);
 
     updateBallPosition();
+    updatePlayerPosition('player1');
+    updatePlayerPosition('player2');
   </script>
 </body>
 </html>
-```
