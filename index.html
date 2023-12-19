@@ -83,12 +83,18 @@
             <img src="https://culture.futbol/wp-content/uploads/2023/02/%D0%9C%D1%8F%D1%87-%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0-%D0%BB%D0%B8%D0%B3%D0%B8-%D1%87%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2-2023.jpg" alt="Изображение О нас">
         </div>
 
+        <div id="tolegenovContent" style="display: none;">
+            <h2>Толегенов</h2>
+            <p>Информация о Толегенове.</p>
+            <img src="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY0ODY4MTE4NDI2NjIz?story_media_id=3225845114112982641_46695628654&igshid=MzRlODBiNWFlZA==" alt="Толегенов">
+        </div>
+
         <!-- ... (другие вкладки) ... -->
 
         <div id="videosContent" style="display: none;">
             <h2>Видео</h2>
             <!-- Вставьте код для видео здесь, используя тег iframe -->
-            <iframe width="560" height="315" src="https://youtu.be/doe7MLpQyag?si=vwDs8yMoTOhrzGJe" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ваш_идентификатор_видео1" frameborder="0" allowfullscreen></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ваш_идентификатор_видео2" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
@@ -102,14 +108,15 @@
             var contentSection = document.getElementById('content');
             var aboutContent = document.getElementById('aboutContent');
             var videosContent = document.getElementById('videosContent');
+            var tolegenovContent = document.getElementById('tolegenovContent');
             var content = '';
 
             // ... (ваш код для других вкладок) ...
 
             switch (tab) {
                 // ... (ваш код для других вкладок) ...
-                case 'videos':
-                    content = videosContent.innerHTML;
+                case 'tolegenov':
+                    content = tolegenovContent.innerHTML;
                     break;
                 // ... (ваш код для других вкладок) ...
             }
@@ -117,6 +124,7 @@
             contentSection.innerHTML = content;
             aboutContent.style.display = (tab === 'about') ? 'block' : 'none';
             videosContent.style.display = (tab === 'videos') ? 'block' : 'none';
+            tolegenovContent.style.display = (tab === 'tolegenov') ? 'block' : 'none';
         }
     </script>
 </body>
