@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футбольный сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/91/e2/5e/91e25e57935fb2987bcef9f491c1860e.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Футбольный сайт</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showContent('about')">О нас</a>
+        <a href="#" onclick="showContent('abdrazakov')">Абдразаков</a>
+        <a href="#" onclick="showContent('tolegenov')">Толегенов</a>
+        <a href="#" onclick="showContent('ronaldo')">Роналду</a>
+        <a href="#" onclick="showContent('messi')">Месси</a>
+        <a href="#" onclick="showContent('team')">Команда</a>
+        <a href="#" onclick="showContent('tournaments')">Турниры</a>
+        <a href="#" onclick="showContent('news')">Новости</a>
+        <a href="#" onclick="showContent('videos')">Видео</a>
+        <a href="#" onclick="showContent('gallery')">Галерея</a>
+    </nav>
+
+    <section id="content">
+        <h2>О нас</h2>
+        <p>Добро пожаловать на наш футбольный сайт, посвященный создателям Абдаразакову и Толегенову.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Футбольный сайт. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function showContent(tab) {
+            var contentSection = document.getElementById('content');
+            var content = '';
+
+            switch (tab) {
+                case 'about':
+                    content = '<h2>О нас</h2><p>Добро пожаловать на наш футбольный сайт, посвященный создателям Абдаразакову и Толегенову.</p><img src="https://culture.futbol/wp-content/uploads/2023/02/%D0%9C%D1%8F%D1%87-%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0-%D0%BB%D0%B8%D0%B3%D0%B8-%D1%87%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2-2023.jpg" alt="Изображение О нас">';
+                    break;
+                case 'abdrazakov':
+                    content = '<h2>Абдаразаков</h2><p>Здесь вы можете узнать больше о Абдаразакове и его вкладе в мир футбола.</p><p>Биография Абдаразакова...</p><img src="ссылка_на_фото_абдаразакова.jpg" alt="Фото Абдаразакова">';
+                    break;
+                case 'tolegenov':
+                    content = '<h2>Толегенов</h2><p>Узнайте интересные факты о Толегенове и его влиянии на футбольное сообщество.</p><p>Биография Толегенова...</p><img src="c:\Users\Рамазан\Downloads\photo1693770641.jpeg" alt="Фото Толегенова">';
+                    break;
+                case 'ronaldo':
+                    content = '<h2>Роналду</h2><p>Криштиану Роналду — португальский футболист, четырежды лауреат "Золотого мяча".</p><p>Биография Роналду...</p><img src="https://media.radaronline.com/brand-img/K7SN9NzNZ/0x0/2017/11/cristiano-ronaldo-welcomes-fourth-child-pp.jpg" alt="Фото Роналду">';
+                    break;
+                case 'messi':
+                    content = '<h2>Месси</h2><p>Лионель Месси — аргентинский футболист, шестнадцатикратный лауреат "Золотого мяча".</p><p>Биография Месси...</p><img src="https://staticg.sportskeeda.com/editor/2021/08/7669b-16282461720135-800.jpg" alt="Фото Месси">';
+                    break;
+                case 'team':
+                    content = '<h2>Команда</h2><p>Узнайте больше о нашей футбольной команде и ее достижениях.</p>';
+                    break;
+                case 'tournaments':
+                    content = '<h2>Турниры</h2><p>Информация о предстоящих и прошедших футбольных турнирах.</p><img src="https://img.championat.com/i/h/d/17025089042080117701.png" alt="Изображение Турниры 1"><img src="https://img.championat.com/i/m/b/17025089131672291093.png" alt="Изображение Турниры 2">';
+                    break;
+                case 'news':
+                    content = '<h2>Новости</h2><p>Последние новости мира футбола и нашей команды.</p>';
+                    break;
+                case 'videos':
+                    content = '<h2>Видео</h2><p>Просмотрите захватывающие моменты футбольных матчей и тренировок.</p>';
+                    break;
+                case 'gallery':
+                    content = '<h2>Галерея</h2><p>Просмотрите фотографии нашей команды, игроков и мероприятий.</p>';
+                    break;
+                default:
+                    break;
+            }
+
+            contentSection.innerHTML = content;
+        }
+    </script>
+</body>
+
+</html>
