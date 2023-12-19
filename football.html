@@ -6,27 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Футбольная игра</title>
   <style>
-    /* Добавьте свои стили здесь */
     body {
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #87CEEB; /* Цвет фона - голубой */
+      background-color: #87CEEB;
+      font-family: 'Arial', sans-serif;
     }
     #field {
       position: relative;
       width: 600px;
       height: 300px;
-      background-color: #2E8B57; /* Цвет поля - зеленый */
+      background-color: #2E8B57;
     }
     #ball {
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: #FFD700; /* Цвет мяча - желтый */
+      background-color: #FFD700;
       border-radius: 50%;
+    }
+    #controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -35,30 +45,48 @@
     <div id="ball"></div>
   </div>
 
+  <div id="controls">
+    <button onclick="moveBall('up')">Вверх</button>
+    <button onclick="moveBall('down')">Вниз</button>
+    <button onclick="moveBall('left')">Влево</button>
+    <button onclick="moveBall('right')">Вправо</button>
+  </div>
+
   <script>
-    // Добавьте свой JavaScript для управления мячом и другими элементами игры
     const field = document.getElementById('field');
     const ball = document.getElementById('ball');
 
-    // Начальные координаты мяча
     let ballX = 300;
     let ballY = 150;
 
-    // Обновление положения мяча
     function updateBallPosition() {
       ball.style.left = ballX + 'px';
       ball.style.top = ballY + 'px';
     }
 
-    // Обработка движения мяча
-    function moveBall(event) {
-      // Добавьте свой код для движения мяча в ответ на действия пользователя
+    function moveBall(direction) {
+      const step = 10;
+
+      switch (direction) {
+        case 'up':
+          ballY -= step;
+          break;
+        case 'down':
+          ballY += step;
+          break;
+        case 'left':
+          ballX -= step;
+          break;
+        case 'right':
+          ballX += step;
+          break;
+      }
+
+      updateBallPosition();
     }
 
-    // Слушатель событий для движения мяча
     document.addEventListener('mousemove', moveBall);
 
-    // Обновление положения мяча при загрузке страницы
     updateBallPosition();
   </script>
 </body>
