@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÐÑÐ°ÑÐ¸Ð²ÑÐµ Ð²Ð¸Ð·ÑÐ°Ð»ÑÐ½ÑÐµ ÑÑÑÐµÐºÑÑ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .animated-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .animated-text span {
+      display: inline-block;
+      transform-origin: 50% 50%;
+      animation: showup 1.5s ease-in-out forwards;
+    }
+
+    @keyframes showup {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .hover-effect {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hover-effect:hover {
+      background-color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="animated-text">
+      <span>ÐÑÐ¸Ð²ÐµÑ, ÑÑÐ¾ Ð²Ð°Ñ ÑÐ°Ð¹Ñ</span>
+      <span>Ñ ÐºÑÐ°ÑÐ¸Ð²ÑÐ¼Ð¸ Ð²Ð¸Ð·ÑÐ°Ð»ÑÐ½ÑÐ¼Ð¸ ÑÑÑÐµÐºÑÐ°Ð¼Ð¸!</span>
+    </div>
+    <button class="hover-effect">ÐÐ°Ð¶Ð¼Ð¸ Ð´Ð»Ñ ÑÑÑÐµÐºÑÐ°</button>
+  </div>
+
+  <script>
+    document.querySelector('.hover-effect').addEventListener('click', function() {
+      alert('ÐÑ ÐºÐ»Ð¸ÐºÐ½ÑÐ»Ð¸ Ð½Ð° ÐºÐ½Ð¾Ð¿ÐºÑ!'); // ÐÐ°Ð¼ÐµÐ½Ð¸ÑÐµ ÑÑÑ ÑÑÑÐ¾ÐºÑ Ð½Ð° ÑÐ²Ð¾Ð¹ ÐºÐ¾Ð´ Ð¸Ð»Ð¸ ÑÑÑÐµÐºÑ
+    });
+  </script>
+</body>
+</html>
