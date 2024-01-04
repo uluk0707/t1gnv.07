@@ -1,116 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ð¤ÑÑÐ±Ð¾Ð»ÑÐ½ÑÐ¹ ÑÐ°Ð¹Ñ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.pinimg.com/originals/91/e2/5e/91e25e57935fb2987bcef9f491c1860e.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
-        nav {
-            background-color: #ddd;
-            padding: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            margin: 0 10px;
-            color: #333;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+  <style>
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px black;
+    }
+    p {
+      font-family: Roboto, sans-serif;
+      font-size: 20px;
+    }
+    body {
+      background-color: blue;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      border: 5px solid white;
+    }
+  </style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Ð¤ÑÑÐ±Ð¾Ð»ÑÐ½ÑÐ¹ ÑÐ°Ð¹Ñ</h1>
-    </header>
-
-    <nav>
-        <a href="#" onclick="showContent('about')">Ð Ð½Ð°Ñ</a>
-        <a href="#" onclick="showContent('tolegenov')">Ð¢Ð¾Ð»ÐµÐ³ÐµÐ½Ð¾Ð²</a>
-        <!-- ... (add other navigation links) ... -->
-    </nav>
-
-    <section id="content">
-        <div id="aboutContent">
-            <h2>Ð Ð½Ð°Ñ</h2>
-            <p>ÐÐ¾Ð±ÑÐ¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°ÑÑ Ð½Ð° Ð½Ð°Ñ ÑÑÑÐ±Ð¾Ð»ÑÐ½ÑÐ¹ ÑÐ°Ð¹Ñ, Ð¿Ð¾ÑÐ²ÑÑÐµÐ½Ð½ÑÐ¹ ÑÐ¾Ð·Ð´Ð°ÑÐµÐ»ÑÐ¼ ÐÐ±Ð´Ð°ÑÐ°Ð·Ð°ÐºÐ¾Ð²Ñ Ð¸ Ð¢Ð¾Ð»ÐµÐ³ÐµÐ½Ð¾Ð²Ñ.</p>
-            <img src="https://culture.futbol/wp-content/uploads/2023/02/%D0%9C%D1%8F%D1%87-%D1%84%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0-%D0%BB%D0%B8%D0%B3%D0%B8-%D1%87%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2-2023.jpg" alt="ÐÐ·Ð¾Ð±ÑÐ°Ð¶ÐµÐ½Ð¸Ðµ Ð Ð½Ð°Ñ">
-        </div>
-
-        <div id="tolegenovContent" style="display: none;">
-            <h2>Ð¢Ð¾Ð»ÐµÐ³ÐµÐ½Ð¾Ð²</h2>
-            <p>Ð¢Ð¾Ð»ÐµÐ³ÐµÐ½Ð¾Ð² Ð£Ð»ÑÐºÐ±ÐµÐº ÐÐ¶Ð¾Ð»Ð´Ð¾ÑÐ±ÐµÐºÐ¾Ð²Ð¸Ñ 16 Ð»ÐµÑ Ð¤ÑÑÐ±Ð¾Ð»Ð¸ÑÑ,ÐÑÐ¾Ð³ÑÐ°Ð¼Ð¼Ð¸ÑÑ .</p>
-            <img src="https://i.ibb.co/qxs835v/IMG-20231113-010652-946.jpg" alt="Ð¢Ð¾Ð»ÐµÐ³ÐµÐ½Ð¾Ð²">
-        </div>
-
-        <!-- ... (add other content sections) ... -->
-    </section>
-
-    <footer>
-        <p>&copy; Ð¤ÑÑÐ±Ð¾Ð»ÑÐ½ÑÐ¹ ÑÐ°Ð¹Ñ. ÐÑÐµ Ð¿ÑÐ°Ð²Ð° Ð·Ð°ÑÐ¸ÑÐµÐ½Ñ.</p>
-    </footer>
-
-    <script>
-        function showContent(tab) {
-            var contentSection = document.getElementById('content');
-            var aboutContent = document.getElementById('aboutContent');
-            var videosContent = document.getElementById('videosContent');
-            var tolegenovContent = document.getElementById('tolegenovContent');
-            var content = '';
-
-            // ... (add cases for other tabs) ...
-
-            switch (tab) {
-                case 'tolegenov':
-                    content = tolegenovContent.innerHTML;
-                    break;
-                // ... (add cases for other tabs) ...
-            }
-
-            contentSection.innerHTML = content;
-            aboutContent.style.display = (tab === 'about') ? 'block' : 'none';
-            videosContent.style.display = (tab === 'videos') ? 'block' : 'none';
-            tolegenovContent.style.display = (tab === 'tolegenov') ? 'block' : 'none';
-        }
-    </script>
+  <h1>Привет, мир!</h1>
+  <p>Это мой первый сайт.</p>
+  <img src="image.jpg" alt="Image related to the website theme">
 </body>
-
 </html>
